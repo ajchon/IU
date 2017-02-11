@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1713" minimumToolsVersion="Automatic">
+    <entity name="File" representedClassName=".File" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="theFiles" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="whichFolder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="saveFile" inverseEntity="Folder" syncable="YES"/>
+    </entity>
+    <entity name="Folder" representedClassName=".Folder" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="folderName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="theFiles" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="saveFile" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="File" inverseName="whichFolder" inverseEntity="File" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="File" positionX="-119" positionY="-16" width="128" height="103"/>
+        <element name="Folder" positionX="144" positionY="-18" width="128" height="103"/>
+    </elements>
+</model>
